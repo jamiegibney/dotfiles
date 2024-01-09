@@ -1,0 +1,4 @@
+[build]
+rustc = "rustc"
+rustc-wrapper = "/usr/local/Cellar/sccache/0.7.4/bin/sccache"
+target-dir = "/Users/jamiegibney/Documents/dev/Rust/CARGO_CACHE"
