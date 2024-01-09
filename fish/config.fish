@@ -20,7 +20,7 @@ alias du="du -hs *"
 # Vim
 alias vi=vim
 alias vim=nvim
-abbr --add vv nvim .
+abbr --add vm nvim .
 
 # Cargo
 abbr --add cr cargo run
