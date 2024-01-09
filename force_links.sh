@@ -15,6 +15,8 @@ ln -sf ./git/.gitconfig ~/.gitconfig
 ln -sf ./kitty/kitty-startup.session ~/.config/kitty/kitty-startup.session
 ln -sf ./kitty/kitty.conf ~/.config/kitty/kitty.conf
 
+ln -sf ./config-nvim ~/.config/nvim
+
 ln -sf ./tmux/.tmux.conf ~/.tmux.conf
 
 ln -sf ./wezterm/.wezterm.lua ~/.wezterm.lua
@@ -22,4 +24,4 @@ ln -sf ./wezterm/.wezterm.lua ~/.wezterm.lua
 ln -sf ./zsh/.zshenv ~/.zshenv
 ln -sf ./zsh/.zshrc ~/.zshrc
 
-echo "Overwrote symbolic links"
+echo "Overwrote all symbolic links"

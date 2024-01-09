@@ -13,6 +13,8 @@ ln -si ./git/.gitconfig ~/.gitconfig
 ln -si ./kitty/kitty-startup.session ~/.config/kitty/kitty-startup.session
 ln -si ./kitty/kitty.conf ~/.config/kitty/kitty.conf
 
+ln -si ./config-nvim ~/.config/nvim
+
 ln -si ./tmux/.tmux.conf ~/.tmux.conf
 
 ln -si ./wezterm/.wezterm.lua ~/.wezterm.lua
