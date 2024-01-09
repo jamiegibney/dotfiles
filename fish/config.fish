@@ -15,6 +15,7 @@ abbr --add cpwd "pwd | tr -d '\n' | pbcopy"
 abbr --add gs git status
 
 alias rm="rm -ri" # Recursive deletion, and prompts the user.
+alias du="du -hs *"
 
 # Vim
 alias vi=vim
