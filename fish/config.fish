@@ -11,23 +11,25 @@ end
 set -g fish_vi_key_bindings
 
 # Abbreviations
-
 abbr --add cpwd "pwd | tr -d '\n' | pbcopy"
-abbr --add cl clear
+abbr --add gs git status
+
+alias rm="rm -ri" # Recursive deletion, and prompts the user.
 
 # Vim
-abbr --add vi vim .
-abbr --add vim nvim .
+alias vi=vim
+alias vim=nvim
+abbr --add vv nvim .
 
 # Cargo
-abbr --add cr cargo r
-abbr --add crr cargo r -r
+abbr --add cr cargo run
+abbr --add crr cargo run --release
 
 abbr --add cc cargo check
-abbr --add ccr cargo check -r
+abbr --add ccr cargo check --release
 
 abbr --add cb cargo build
-abbr --add cbr cargo build -r
+abbr --add cbr cargo build --release
 
 abbr --add ct cargo test
 
@@ -39,9 +41,9 @@ abbr --add aoc cd ~/Documents/dev/Rust/adventofcode/ # "Advent of Code"
 abbr --add rpg cd ~/Documents/dev/Rust/playground/ # "Rust PlayGround"
 abbr --add ncfg cd ~/.config/nvim/ 
 abbr --add uni cd ~/Desktop/Uni/
+abbr --add dot cd ~/.dotfiles/
 
 # Resume suspended process
-# bind -k nul "fg"
 bind \cz "fg"
 
 # osascript ~/.config/kitty/kitty_pos.scpt
