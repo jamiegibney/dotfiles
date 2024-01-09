@@ -5,7 +5,7 @@ end
 set -U fish_greeting
 
 function fish_prompt
-    printf '%s %s > ' (set_color cyan -o) (prompt_pwd --dir-length=0)
+    printf '%s %s%s%s%s > ' (set_color cyan -o) (prompt_pwd --dir-length=0) (set_color normal) (fish_git_prompt) (set_color cyan -o)
 end
 
 set -g fish_vi_key_bindings
