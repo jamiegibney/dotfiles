@@ -1,25 +1,32 @@
-ln -si ./bash/.bashprofile ~/.bashprofile
-ln -si ./bash/.bashrc ~/.bashrc
+#!/bin/bash
 
-ln -si ./cargo/config.toml ~/.cargo/config.toml
+function get_abs_path() {
+    echo "$(cd "$(dirname "$1")" && pwd)/$(basename "$1")"
+}
 
-ln -si ./clang/.clang-format ~/.clang-format
-ln -si ./clang/.clang-tidy ~/.clang-tidy
+function create_link() {
+    local abs_path=$(get_abs_path "$1")
+    ln -si "$abs_path" "$2"
+}
 
-ln -si ./fish/config.fish ~/.config/fish/config.fish
+create_link ./bash/.bashprofile ~/.bashprofile
+create_link ./bash/.bashrc ~/.bashrc
 
-ln -si ./git/.gitconfig ~/.gitconfig
+create_link ./clang/.clang-format ~/.clang-format
+create_link ./clang/.clang-tidy ~/.clang-tidy
 
-ln -si ./kitty/kitty-startup.session ~/.config/kitty/kitty-startup.session
-ln -si ./kitty/kitty.conf ~/.config/kitty/kitty.conf
+create_link ./fish/config.fish ~/.config/fish/config.fish
 
-ln -si ./config-nvim ~/.config/nvim
+create_link ./kitty/kitty-startup.session ~/.config/kitty/kitty-startup.session
+create_link ./kitty/kitty.conf ~/.config/kitty/kitty.conf
 
-ln -si ./tmux/.tmux.conf ~/.tmux.conf
+create_link ./config-nvim ~/.config/nvim
 
-ln -si ./wezterm/.wezterm.lua ~/.wezterm.lua
+create_link ./tmux/.tmux.conf ~/.tmux.conf
 
-ln -si ./zsh/.zshenv ~/.zshenv
-ln -si ./zsh/.zshrc ~/.zshrc
+create_link ./wezterm/.wezterm.lua ~/.wezterm.lua
+
+create_link ./zsh/.zshenv ~/.zshenv
+create_link ./zsh/.zshrc ~/.zshrc
 
 echo "Done"

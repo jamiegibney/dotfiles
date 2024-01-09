@@ -1,27 +1,32 @@
-# This will automatically override any existing links.
+#!/bin/bash
 
-ln -sf ./bash/.bashprofile ~/.bashprofile
-ln -sf ./bash/.bashrc ~/.bashrc
+function get_abs_path() {
+    echo "$(cd "$(dirname "$1")" && pwd)/$(basename "$1")"
+}
 
-ln -sf ./cargo/config.toml ~/.cargo/config.toml
+function create_link() {
+    local abs_path=$(get_abs_path "$1")
+    ln -sf "$abs_path" "$2"
+}
 
-ln -sf ./clang/.clang-format ~/.clang-format
-ln -sf ./clang/.clang-tidy ~/.clang-tidy
+create_link ./bash/.bashprofile ~/.bashprofile
+create_link ./bash/.bashrc ~/.bashrc
 
-ln -sf ./fish/config.fish ~/.config/fish/config.fish
+create_link ./clang/.clang-format ~/.clang-format
+create_link ./clang/.clang-tidy ~/.clang-tidy
 
-ln -sf ./git/.gitconfig ~/.gitconfig
+create_link ./fish/config.fish ~/.config/fish/config.fish
 
-ln -sf ./kitty/kitty-startup.session ~/.config/kitty/kitty-startup.session
-ln -sf ./kitty/kitty.conf ~/.config/kitty/kitty.conf
+create_link ./kitty/kitty-startup.session ~/.config/kitty/kitty-startup.session
+create_link ./kitty/kitty.conf ~/.config/kitty/kitty.conf
 
-ln -sf ./config-nvim ~/.config/nvim
+create_link ./config-nvim ~/.config/nvim
 
-ln -sf ./tmux/.tmux.conf ~/.tmux.conf
+create_link ./tmux/.tmux.conf ~/.tmux.conf
 
-ln -sf ./wezterm/.wezterm.lua ~/.wezterm.lua
+create_link ./wezterm/.wezterm.lua ~/.wezterm.lua
 
-ln -sf ./zsh/.zshenv ~/.zshenv
-ln -sf ./zsh/.zshrc ~/.zshrc
+create_link ./zsh/.zshenv ~/.zshenv
+create_link ./zsh/.zshrc ~/.zshrc
 
 echo "Overwrote all symbolic links"
