@@ -13,6 +13,7 @@ set -g fish_vi_key_bindings
 # Abbreviations
 abbr --add cpwd "pwd | tr -d '\n' | pbcopy"
 abbr --add gs git status
+abbr --add gaa git add -A
 
 alias rm="rm -ri" # Recursive deletion, and prompts the user.
 alias du="du -hs *"
@@ -36,7 +37,6 @@ abbr --add ct cargo test
 
 # Directories
 abbr --add dev cd ~/Documents/dev/
-abbr --add ccp cd ~/Documents/dev/Rust/Uni/creative_coding/creative_coding_project/
 abbr --add rust cd ~/Documents/dev/Rust/
 abbr --add aoc cd ~/Documents/dev/Rust/adventofcode/ # "Advent of Code"
 abbr --add rpg cd ~/Documents/dev/Rust/playground/ # "Rust PlayGround"
