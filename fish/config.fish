@@ -14,6 +14,7 @@ set -g fish_vi_key_bindings
 abbr --add cpwd "pwd | tr -d '\n' | pbcopy"
 abbr --add gs git status
 abbr --add gaa git add -A
+abbr --add gc git commit -m
 abbr --add ghv gh repo view --web
 
 alias rm="rm -ri" # Recursive deletion, and prompts the user.
