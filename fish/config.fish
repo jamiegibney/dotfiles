@@ -16,6 +16,7 @@ abbr --add gs git status
 abbr --add gaa git add -A
 abbr --add gc git commit -m
 abbr --add ghv gh repo view --web
+abbr --add py python3
 
 alias rm="rm -ri" # Recursive deletion, and prompts the user.
 alias du="du -hs *"
