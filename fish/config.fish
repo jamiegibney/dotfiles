@@ -17,6 +17,7 @@ abbr --add gaa git add -A
 abbr --add gc git commit -m
 abbr --add ghv gh repo view --web
 abbr --add py python3
+alias whatever="cd /Users/jamiegibney/Documents/dev/Rust/playground/whatever && nvim ."
 
 alias rm="rm -ri" # Recursive deletion, and prompts the user.
 alias du="du -hs *"
@@ -43,6 +44,7 @@ abbr --add dev cd ~/Documents/dev/
 abbr --add rust cd ~/Documents/dev/Rust/
 abbr --add aoc cd ~/Documents/dev/Rust/adventofcode/ # "Advent of Code"
 abbr --add rpg cd ~/Documents/dev/Rust/playground/ # "Rust PlayGround"
+abbr --add pg cd ~/Documents/dev/Playground/ # "PlayGround"
 abbr --add ncfg cd ~/.config/nvim/ 
 abbr --add uni cd ~/Desktop/Uni/
 abbr --add dot cd ~/.dotfiles/
