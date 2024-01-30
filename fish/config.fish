@@ -17,6 +17,7 @@ abbr --add gaa git add -A
 abbr --add gc git commit -m
 abbr --add ghv gh repo view --web
 abbr --add py python3
+abbr --add oh open .
 alias whatever="cd /Users/jamiegibney/Documents/dev/Rust/playground/whatever && nvim ."
 
 alias rm="rm -ri" # Recursive deletion, and prompts the user.
@@ -47,6 +48,7 @@ abbr --add rpg cd ~/Documents/dev/Rust/playground/ # "Rust PlayGround"
 abbr --add pg cd ~/Documents/dev/Playground/ # "PlayGround"
 abbr --add ncfg cd ~/.config/nvim/ 
 abbr --add uni cd ~/Desktop/Uni/
+abbr --add y2 cd ~/Desktop/Uni/YEAR\\ 2/
 abbr --add dot cd ~/.dotfiles/
 
 # Resume suspended process
