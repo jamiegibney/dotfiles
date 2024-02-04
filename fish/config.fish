@@ -41,17 +41,17 @@ abbr --add cbr cargo build --release
 abbr --add ct cargo test
 
 # Directories
+abbr --add dot cd ~/.dotfiles/
+abbr --add uni cd ~/Desktop/Uni/
 abbr --add dev cd ~/Documents/dev/
 abbr --add rust cd ~/Documents/dev/Rust/
 abbr --add aoc cd ~/Documents/dev/Rust/adventofcode/ # "Advent of Code"
 abbr --add rpg cd ~/Documents/dev/Rust/playground/ # "Rust PlayGround"
 abbr --add pg cd ~/Documents/dev/Playground/ # "PlayGround"
-abbr --add ncfg cd ~/.config/nvim/ 
-abbr --add uni cd ~/Desktop/Uni/
-abbr --add y2 cd ~/Desktop/Uni/YEAR\\ 2/
-abbr --add dot cd ~/.dotfiles/
+abbr --add ncfg cd ~/.config/nvim/ # "Neovim ConFiG"
+abbr --add y2 cd ~/Desktop/Uni/YEAR\\ 2/ # "Year 2"
+abbr --add sf cd ~/Documents/dev/C++/SPECTRAL_FILTER # "Spectral Filter"
+abbr --add ccp cd ~/Documents/dev/Rust/Uni/creative_coding/creative_coding_project/ # "Creative Coding Project"
 
 # Resume suspended process
 bind \cz "fg"
-
-# osascript ~/.config/kitty/kitty_pos.scpt
