@@ -42,6 +42,7 @@ abbr --add ct cargo test
 
 # Directories
 abbr --add dot cd ~/.dotfiles/
+abbr --add drop cd ~/Library/CloudStorage/Dropbox/
 abbr --add uni cd ~/Desktop/Uni/
 abbr --add dev cd ~/Documents/dev/
 abbr --add rust cd ~/Documents/dev/Rust/
