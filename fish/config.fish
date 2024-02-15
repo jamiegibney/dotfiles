@@ -22,6 +22,7 @@ alias whatever="cd /Users/jamiegibney/Documents/dev/Rust/playground/whatever && 
 
 alias rm="rm -ri" # Recursive deletion, and prompts the user.
 alias du="du -hs *"
+alias cd="z" # Replace cd with z for smarter completions
 
 # Vim
 alias vi=vim
@@ -56,3 +57,5 @@ abbr --add ccp cd ~/Documents/dev/Rust/Uni/creative_coding/creative_coding_proje
 
 # Resume suspended process
 bind \cz "fg"
+
+zoxide init fish | source
