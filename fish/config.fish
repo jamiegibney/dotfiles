@@ -57,4 +57,7 @@ abbr --add ccp cd ~/Documents/dev/Rust/Uni/creative_coding/creative_coding_proje
 # Resume suspended process
 bind \cz "fg"
 
-zoxide init fish | source
+#zoxide init fish | source
+
+#export VCPKG_ROOT=/Users/jamiegibney/Documents/dev/Libraries\ and\ Frameworks/vcpkg
+# export PATH=$VCPKG_ROOT:$PATH
