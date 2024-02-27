@@ -53,6 +53,7 @@ abbr --add ncfg cd ~/.config/nvim/ # "Neovim ConFiG"
 abbr --add y2 cd ~/Desktop/Uni/YEAR\\ 2/ # "Year 2"
 abbr --add sf cd ~/Documents/dev/C++/SPECTRAL_FILTER # "Spectral Filter"
 abbr --add ccp cd ~/Documents/dev/Rust/Uni/creative_coding/creative_coding_project/ # "Creative Coding Project"
+abbr --add courts cd ~/Documents/Unity/CYN-Courts/Assets/Scripts/
 
 # Resume suspended process
 bind \cz "fg"
