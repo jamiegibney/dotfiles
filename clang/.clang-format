@@ -20,3 +20,4 @@ SpaceBeforeParens: Custom
 SpaceBeforeParensOptions: 
   AfterOverloadedOperator: true
 AlwaysBreakTemplateDeclarations: Yes
+AllowShortFunctionsOnASingleLine: None
