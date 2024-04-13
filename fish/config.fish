@@ -11,7 +11,7 @@ end
 set -g fish_vi_key_bindings
 
 alias rm="rm -ri" # Recursive deletion, and prompts the user.
-alias du="du -hs *" # Disk usage -> "human-readable" and displays an entry for each file.
+alias du="du -hs" # Disk usage -> "human-readable" and displays an entry for each file.
 
 # Rust project for arbitrary stuff
 alias whatever="cd /Users/jamiegibney/Documents/dev/Rust/playground/whatever && nvim ."
