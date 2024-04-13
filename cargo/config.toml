@@ -18,6 +18,8 @@ rustflags = [
 # the main downside to using this option for development is that backtraces will only
 # have function names, and not include line numbers for functions that call a panic.
 debug = 0
+# to include line/column numbers but not other debug info, use:
+# debug = "line-tables-only"
 
 [profile.release]
 lto = true
@@ -29,4 +31,4 @@ strip = "debuginfo"
 
 [target.x86_64-apple-darwin]
 # use an up-to-date version of clang for the linker
-linker = "/usr/local/Cellar/llvm/17.0.6_1/bin/clang-17"
+# linker = "/usr/local/Cellar/llvm/17.0.6_1/bin/clang-17"
