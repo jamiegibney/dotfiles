@@ -15,10 +15,14 @@ create_link ./bash/.bashrc $HOME/.bashrc
 create_link ./clang/.clang-format $HOME/.clang-format
 create_link ./clang/.clang-tidy $HOME/.clang-tidy
 
+create_link ./cargo/config.toml $HOME/.cargo/config.toml
+
 create_link ./fish/config.fish $HOME/.config/fish/config.fish
 
 create_link ./kitty/kitty-startup.session $HOME/.config/kitty/kitty-startup.session
 create_link ./kitty/kitty.conf $HOME/.config/kitty/kitty.conf
+
+create_link ./ra-multiplex/config.toml $HOME/.config/ra-multiplex/config.toml
 
 create_link ./config-nvim $HOME/.config/nvim
 
