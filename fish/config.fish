@@ -80,3 +80,6 @@ bind \cz "fg"
 
 #export VCPKG_ROOT=/Users/jamiegibney/Documents/dev/Libraries\ and\ Frameworks/vcpkg
 # export PATH=$VCPKG_ROOT:$PATH
+
+# Generated for envman. Do not edit.
+test -s ~/.config/envman/load.fish; and source ~/.config/envman/load.fish
