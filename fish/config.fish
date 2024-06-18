@@ -34,16 +34,20 @@ abbr --add vim nvim .
 # Cargo
 abbr --add cr cargo run
 abbr --add crr cargo run --release
+abbr --add crrn cargo run --release -- -Ctarget-cpu=native
 abbr --add cc cargo check
 abbr --add cb cargo build
 abbr --add cbr cargo build --release
+abbr --add cbrn cargo build --release -- -Ctarget-cpu=native
 abbr --add ct cargo test
 
 abbr --add cnr cargo +nightly run
 abbr --add cnrr cargo +nightly run --release
+abbr --add cnrrn cargo +nightly run --release -- -Ctarget-cpu=native
 abbr --add cnc cargo +nightly check
 abbr --add cnb cargo +nightly build
 abbr --add cnbr cargo +nightly build --release
+abbr --add cnbrn cargo +nightly build --release -- -Ctarget-cpu=native
 abbr --add cnt cargo +nightly test
 
 # abbr --add rnew set rnew_name "rnew_$(date "+%y%m%d_%H%M")" && cd /Users/jamiegibney/Documents/dev/Rust/playground/ && cargo new $rnew_name &&
@@ -71,7 +75,8 @@ abbr --add mw cd ~/Desktop/Uni/YEAR\\ 2/Middleware/ # "Middleware"
 abbr --add rp cd ~/Desktop/Uni/YEAR\\ 2/Research\\ Practice/ # "Research Practice"
 abbr --add ip cd ~/Desktop/Uni/YEAR\\ 2/Industry\\ Practice/ # "Industry Practice"
 abbr --add ip2 cd ~/Documents/Unity/SpaceStation\\ FMOD/Assets/ # "Industry Practice project #2"
-abbr --add courts cd ~/Documents/Unity/CYN-Courts/Assets/Scripts/
+abbr --add courts cd ~/Documents/Unity/CYN-Courts\\ \\\(1\\\)/Assets/Scripts/
+abbr --add cfmod cd ~/Documents/Unity/CYN-Courts\\ FMOD/cyn-courts-fmod2_03/
 
 # Resume suspended process
 bind \cz "fg"
