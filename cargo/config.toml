@@ -23,7 +23,8 @@ debug = 0
 
 [profile.release]
 lto = true
-panic = "abort"
+# panic = "abort"
+panic = "unwind"
 opt-level = 3
 debug = false
 # ideally this would be "symbols", but mold/sold doesn't seem to support this.
