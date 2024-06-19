@@ -6,7 +6,7 @@ rustc-wrapper = "/usr/local/bin/sccache"
 # one directory by default. may also improve compilation times, but no guarantee of that
 target-dir = "/Users/jamiegibney/Documents/dev/Rust/CARGO_CACHE"
 rustflags = [
-    # the sold (macOS fork of mold) linker
+    # the sold (macOS fork of `mold`) linker
     # - sold does not understand `strip = "symbols"`, but it can accept `strip = "debuginfo"`.
     "-Clink-arg=-fuse-ld=/usr/local/bin/ld64.sold",
     # this option is best used *only* for development. see more:
@@ -23,8 +23,6 @@ debug = 0
 
 [profile.release]
 lto = true
-# panic = "abort"
-panic = "unwind"
 opt-level = 3
 debug = false
 # ideally this would be "symbols", but mold/sold doesn't seem to support this.
