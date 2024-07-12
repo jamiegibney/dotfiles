@@ -71,6 +71,7 @@ abbr --add ccp cd ~/Documents/dev/Rust/Uni/creative_coding/creative_coding_proje
 # Uni
 abbr --add uni cd ~/Desktop/Uni/
 abbr --add y2 cd ~/Desktop/Uni/YEAR\\ 2/ # "Year 2"
+abbr --add y3 cd ~/Desktop/Uni/YEAR\\ 3/ # "Year 3"
 abbr --add mw cd ~/Desktop/Uni/YEAR\\ 2/Middleware/ # "Middleware"
 abbr --add rp cd ~/Desktop/Uni/YEAR\\ 2/Research\\ Practice/ # "Research Practice"
 abbr --add ip cd ~/Desktop/Uni/YEAR\\ 2/Industry\\ Practice/ # "Industry Practice"
@@ -88,3 +89,6 @@ bind \cz "fg"
 
 # Generated for envman. Do not edit.
 test -s ~/.config/envman/load.fish; and source ~/.config/envman/load.fish
+
+export CXX=/Library/Developer/CommandLineTools/usr/bin/clang++
+export CC=/Library/Developer/CommandLineTools/usr/bin/clang
