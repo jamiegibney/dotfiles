@@ -74,7 +74,8 @@ abbr --add ncfg cd ~/.config/nvim/ # "Neovim ConFiG"
 # Projects
 abbr --add pasf cd ~/Documents/dev/C++/pasf/ # "Spectral Filter"
 abbr --add ccp cd ~/Documents/dev/Rust/Uni/creative_coding/creative_coding_project/ # "Creative Coding Project"
-abbr --add srs cd ~/Documents/dev/pro/controlled_frenzy/sound_reactions_system/repo/
+abbr --add srs cd ~/Documents/dev/pro/controlled_frenzy/sound_reactions_system/soundscape_generator/ # "Sound Reactions Soundscape" Generator
+abbr --add srm cd ~/Documents/dev/pro/controlled_frenzy/sound_reactions_system/music_generator/ # "Sound Reactions Music" Generator
 abbr --add courts cd ~/Documents/Unity/CYN-Courts\\ \\\(1\\\)/Assets/Scripts/
 abbr --add cfmod cd ~/Documents/Unity/CYN-Courts\\ FMOD/cyn-courts-fmod2_03/
 
