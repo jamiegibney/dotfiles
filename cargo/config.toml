@@ -4,30 +4,30 @@ rustc = "rustc"
 rustc-wrapper = "/usr/local/bin/sccache"
 # the default target directory - this reduces overall disk space by compiling everything into
 # one directory by default. may also improve compilation times, but no guarantee of that
-target-dir = "/Users/jamiegibney/Documents/dev/Rust/CARGO_CACHE"
+target-dir = "/Users/jamiegibney/Documents/dev/rust/.CACHE"
 rustflags = [
-    # the sold (macOS fork of `mold`) linker
-    # - sold does not understand `strip = "symbols"`, but it can accept `strip = "debuginfo"`.
-    "-Clink-arg=-fuse-ld=/usr/local/bin/ld64.sold",
     # this option is best used *only* for development. see more:
     # https://davidlattimore.github.io/posts/2024/02/04/speeding-up-the-rust-edit-build-run-cycle.html#:~:text=Building%20a%20non%2Drelocatable%20executable    
     "-Crelocation-model=static",
 ]
 
+[target.aarch64-apple.darwin]
+rustflags = [
+    "-C",
+    "link-arg=-fuse-ld=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld",
+    "-C",
+    "link-arg=-ld_new",
+]
+
 [profile.dev]
 # the main downside to using this option for development is that backtraces will only
 # have function names, and not include line numbers for functions that call a panic.
-debug = 0
 # to include line/column numbers but not other debug info, use:
-# debug = "line-tables-only"
+debug = "line-tables-only"
+split-debuginfo = "unpacked"
 
 [profile.release]
-lto = true
+# lto = true
 opt-level = 3
 debug = false
-# ideally this would be "symbols", but mold/sold doesn't seem to support this.
-strip = "debuginfo"
-
-[target.x86_64-apple-darwin]
-# use an up-to-date version of clang for the linker
-# linker = "/usr/local/Cellar/llvm/17.0.6_1/bin/clang-17"
+strip = "symbols"
