@@ -4,22 +4,31 @@ end
 
 set -U fish_greeting
 
-function fish_prompt
-    set -g __fish_git_prompt_show_informative_status false
-    set -g __fish_git_prompt_showuntrackedfiles false
-    set -g __fish_git_prompt_showdirtystate false
-    set -g __fish_git_prompt_showcolorhints true
-    set -g __fish_git_prompt_showupstream informative
-    printf '%s %s%s%s%s > ' (set_color blue -o) (prompt_pwd --dir-length=0) (set_color normal) (fish_git_prompt) (set_color blue -o)
-end
+# function fish_prompt
+#     set -g __fish_git_prompt_show_informative_status false
+#     set -g __fish_git_prompt_showuntrackedfiles false
+#     set -g __fish_git_prompt_showdirtystate false
+#     set -g __fish_git_prompt_showcolorhints true
+#     set -g __fish_git_prompt_showupstream informative
+#     printf '%s %s%s%s%s > ' (set_color blue -o) (prompt_pwd --dir-length=0) (set_color normal) (fish_git_prompt) (set_color blue -o)
+# end
 
 set -g fish_vi_key_bindings
 
 alias rm="rm -ri" # Recursive deletion, and prompts the user.
 alias du="du -hs" # Disk usage -> "human-readable" and displays an entry for each file.
 
+function multicd
+    set -l length (math (string length -- $argv) - 1)
+    echo cd (string repeat -n $length ../)
+end
+
+abbr --add dotdot --regex '^\.\.+$' --function multicd
+
 # Rust project for arbitrary stuff
-alias whatever="cd /Users/jamiegibney/Documents/dev/Rust/playground/whatever && nvim ."
+alias whatever="cd /Users/jamiegibney/Documents/dev/rust/playground/whatever && nvim ."
+
+alias np="nowplaying-cli get artist title" # Now-playing on the CLI
 
 # Commands
 abbr --add cpwd "pwd | tr -d '\n' | pbcopy" # "Copy Parent Working Directory"
@@ -37,11 +46,19 @@ abbr --add lg lazygit
 alias vi=vim
 abbr --add vim nvim .
 
+# Make
+abbr --add mr make run
+abbr --add mc make check
+abbr --add mcl make clean
+abbr --add mex make build_export
+abbr --add mrl make reload
+abbr --add mrb make reload \&\& make check
+
 # Cargo
 abbr --add cr cargo run
 abbr --add crr cargo run --release
 abbr --add crrn cargo run --release -- -Ctarget-cpu=native
-abbr --add cc cargo check
+abbr --add cch cargo check
 abbr --add cb cargo build
 abbr --add cbr cargo build --release
 abbr --add cbrn cargo build --release -- -Ctarget-cpu=native
@@ -50,53 +67,140 @@ abbr --add ct cargo test
 abbr --add cnr cargo +nightly run
 abbr --add cnrr cargo +nightly run --release
 abbr --add cnrrn cargo +nightly run --release -- -Ctarget-cpu=native
-abbr --add cnc cargo +nightly check
+abbr --add cnch cargo +nightly check
 abbr --add cnb cargo +nightly build
 abbr --add cnbr cargo +nightly build --release
 abbr --add cnbrn cargo +nightly build --release -- -Ctarget-cpu=native
 abbr --add cnt cargo +nightly test
 
-# abbr --add rnew set rnew_name "rnew_$(date "+%y%m%d_%H%M")" && cd /Users/jamiegibney/Documents/dev/Rust/playground/ && cargo new $rnew_name &&
+# abbr --add rnew set rnew_name "rnew_$(date "+%y%m%d_%H%M")" && cd /Users/jamiegibney/Documents/dev/rust/playground/ && cargo new $rnew_name &&
 #  cd $rnew_name && set -e rnew_name
 
 # Directories
 abbr --add dot cd ~/.dotfiles/
 abbr --add drop cd ~/Library/CloudStorage/Dropbox/
 abbr --add dev cd ~/Documents/dev/
+abbr --add probe cd ~/Documents/dev/probe/
 abbr --add pro cd ~/Documents/dev/pro/
-abbr --add rust cd ~/Documents/dev/Rust/
-abbr --add aoc cd ~/Documents/dev/Rust/adventofcode/ # "Advent of Code"
-abbr --add rpg cd ~/Documents/dev/Rust/playground/ # "Rust PlayGround"
-abbr --add pg cd ~/Documents/dev/Playground/ # "PlayGround"
-abbr --add cpp cd ~/Documents/dev/C++/
+abbr --add rust cd ~/Documents/dev/rust/
+abbr --add aoc cd ~/Documents/dev/rust/adventofcode/ # "Advent of Code"
+abbr --add rpg cd ~/Documents/dev/rust/playground/ # "rust PlayGround"
+abbr --add pg cd ~/Documents/dev/playground/ # "PlayGround"
+abbr --add c cd ~/Documents/dev/c/
+abbr --add cpp cd ~/Documents/dev/cpp/
 abbr --add ncfg cd ~/.config/nvim/ # "Neovim ConFiG"
 
 # Projects
-abbr --add pasf cd ~/Documents/dev/C++/pasf/ # "Spectral Filter"
-abbr --add ccp cd ~/Documents/dev/Rust/Uni/creative_coding/creative_coding_project/ # "Creative Coding Project"
-abbr --add srs cd ~/Documents/dev/pro/controlled_frenzy/sound_reactions_system/soundscape_generator/ # "Sound Reactions Soundscape" Generator
-abbr --add srm cd ~/Documents/dev/pro/controlled_frenzy/sound_reactions_system/music_generator/ # "Sound Reactions Music" Generator
-abbr --add courts cd ~/Documents/Unity/CYN-Courts\\ \\\(1\\\)/Assets/Scripts/
-abbr --add cfmod cd ~/Documents/Unity/CYN-Courts\\ FMOD/cyn-courts-fmod2_03/
+abbr --add pasf cd ~/Documents/dev/cpp/pasf/
+abbr --add eme cd ~/Documents/dev/pro/sound_reactions/sound_generators/eme/
+abbr --add asg cd ~/Documents/dev/pro/sound_reactions/sound_generators/asg/
+abbr --add mae cd ~/Documents/dev/rust/mae/
 
 # Uni
-abbr --add uni cd ~/Desktop/Uni/
-abbr --add y2 cd ~/Desktop/Uni/YEAR\\ 2/ # "Year 2"
-abbr --add y3 cd ~/Desktop/Uni/YEAR\\ 3/ # "Year 3"
-abbr --add in cd ~/Desktop/Uni/YEAR\\ 3/Innovation/ # "Year 3"
-abbr --add pd cd ~/Desktop/Uni/YEAR\\ 3/Product\\ Design/ # "Year 3"
-abbr --add rp cd ~/Desktop/Uni/YEAR\\ 3/Research\\ Project/ # "Year 3"
+abbr --add uni cd ~/Documents/Uni
+abbr --add y3 cd ~/Documents/Uni/Year\\ 3/ # "Year 3"
+abbr --add in cd ~/Documents/Uni/Year\\ 3/Innovation/Realisation/
+abbr --add pd cd ~/Documents/Uni/Year\\ 3/Portfolio/Delivery/
+abbr --add rp cd ~/Documents/Uni/Year\\ 3/Research/Project/
 
 # Resume suspended process
 bind \cz "fg"
 
-#zoxide init fish | source
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
-#export VCPKG_ROOT=/Users/jamiegibney/Documents/dev/Libraries\ and\ Frameworks/vcpkg
-# export PATH=$VCPKG_ROOT:$PATH
+fish_add_path ""
 
-# Generated for envman. Do not edit.
-test -s ~/.config/envman/load.fish; and source ~/.config/envman/load.fish
+function fish_prompt
+    set -l __last_command_exit_status $status
 
-# export CXX=/Library/Developer/CommandLineTools/usr/bin/clang++
-# export CC=/Library/Developer/CommandLineTools/usr/bin/clang
+    if not set -q -g __fish_arrow_functions_defined
+        set -g __fish_arrow_functions_defined
+        function _git_branch_name
+            set -l branch (git symbolic-ref --quiet HEAD 2>/dev/null)
+            if set -q branch[1]
+                echo (string replace -r '^refs/heads/' '' $branch)
+            else
+                echo (git rev-parse --short HEAD 2>/dev/null)
+            end
+        end
+
+        function _is_git_dirty
+            not command git diff-index --cached --quiet HEAD -- &>/dev/null
+            or not command git diff --no-ext-diff --quiet --exit-code &>/dev/null
+        end
+
+        function _is_git_repo
+            type -q git
+            or return 1
+            git rev-parse --git-dir >/dev/null 2>&1
+        end
+
+        function _hg_branch_name
+            echo (hg branch 2>/dev/null)
+        end
+
+        function _is_hg_dirty
+            set -l stat (hg status -mard 2>/dev/null)
+            test -n "$stat"
+        end
+
+        function _is_hg_repo
+            fish_print_hg_root >/dev/null
+        end
+
+        function _repo_branch_name
+            _$argv[1]_branch_name
+        end
+
+        function _is_repo_dirty
+            _is_$argv[1]_dirty
+        end
+
+        function _repo_type
+            if _is_hg_repo
+                echo hg
+                return 0
+            else if _is_git_repo
+                echo git
+                return 0
+            end
+            return 1
+        end
+    end
+
+    set -l cyan (set_color -o cyan)
+    set -l yellow (set_color -o yellow)
+    set -l red (set_color -o red)
+    set -l green (set_color -o green)
+    set -l blue (set_color -o blue)
+    set -l normal (set_color normal)
+
+    set -l arrow_color "$green"
+    if test $__last_command_exit_status != 0
+        set arrow_color "$red"
+    end
+
+    set -l arrow "$arrow_color ➜ "
+    if fish_is_root_user
+        set arrow "$arrow_color # "
+    end
+
+    set -l cwd $cyan(prompt_pwd | path basename)
+
+    set -l repo_info
+    if set -l repo_type (_repo_type)
+        set -l repo_branch $red(_repo_branch_name $repo_type)
+        set repo_info "$blue ($repo_branch$blue)"
+
+        if _is_repo_dirty $repo_type
+            set -l dirty "$yellow"
+            set repo_info "$repo_info$dirty"
+        end
+    end
+
+    echo -n -s ' '$cwd $repo_info $normal $arrow
+end
+
+function fish_title
+    echo (fish_prompt_pwd_dir_length=1 prompt_pwd --dir-length=0)
+end
