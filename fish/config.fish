@@ -85,7 +85,7 @@ abbr --add pro cd ~/Documents/dev/pro/
 abbr --add rust cd ~/Documents/dev/rust/
 abbr --add c cd ~/Documents/dev/c/
 abbr --add cpp cd ~/Documents/dev/cpp/
-abbr --add ncfg cd ~/.config/nvim/ # "Neovim ConFiG"
+abbr --add ncfg cd ~/.dotfiles/nvim/
 
 # Projects
 abbr --add pasf cd ~/Documents/dev/cpp/pasf/
