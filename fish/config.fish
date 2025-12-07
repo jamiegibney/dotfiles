@@ -83,25 +83,16 @@ abbr --add dev cd ~/Documents/dev/
 abbr --add probe cd ~/Documents/dev/probe/
 abbr --add pro cd ~/Documents/dev/pro/
 abbr --add rust cd ~/Documents/dev/rust/
-abbr --add aoc cd ~/Documents/dev/rust/adventofcode/ # "Advent of Code"
-abbr --add rpg cd ~/Documents/dev/rust/playground/ # "rust PlayGround"
-abbr --add pg cd ~/Documents/dev/playground/ # "PlayGround"
 abbr --add c cd ~/Documents/dev/c/
 abbr --add cpp cd ~/Documents/dev/cpp/
 abbr --add ncfg cd ~/.config/nvim/ # "Neovim ConFiG"
 
 # Projects
 abbr --add pasf cd ~/Documents/dev/cpp/pasf/
-abbr --add eme cd ~/Documents/dev/pro/sound_reactions/sound_generators/eme/
+abbr --add phy cd ~/Documents/dev/cpp/physarum/
+abbr --add sap cd ~/Documents/dev/cpp/sap/
+abbr --add eme cd ~/Documents/dev/cpp/eme/
 abbr --add asg cd ~/Documents/dev/pro/sound_reactions/sound_generators/asg/
-abbr --add mae cd ~/Documents/dev/rust/mae/
-
-# Uni
-abbr --add uni cd ~/Documents/Uni
-abbr --add y3 cd ~/Documents/Uni/Year\\ 3/ # "Year 3"
-abbr --add in cd ~/Documents/Uni/Year\\ 3/Innovation/Realisation/
-abbr --add pd cd ~/Documents/Uni/Year\\ 3/Portfolio/Delivery/
-abbr --add rp cd ~/Documents/Uni/Year\\ 3/Research/Project/
 
 # Resume suspended process
 bind \cz "fg"
