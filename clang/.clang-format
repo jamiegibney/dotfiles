@@ -1,28 +1,66 @@
-IndentWidth: 4
+BasedOnStyle: LLVM
 AccessModifierOffset: -3
-PointerAlignment: Left
-IndentCaseLabels: true
-BreakBeforeBraces: Custom
+AlignConsecutiveAssignments: false
+AlignConsecutiveDeclarations: false
+AlignOperands: true
+AlignTrailingComments: true
+AllowShortBlocksOnASingleLine: true
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortLambdasOnASingleLine: All
+AllowShortLoopsOnASingleLine: false
+BinPackArguments: false
+AlwaysBreakTemplateDeclarations: Yes
 BraceWrapping:
+  AfterCaseLabel: false
   AfterClass: false
   AfterControlStatement: false
   AfterEnum: false
   AfterFunction: false
   AfterNamespace: false
-  AfterObjCDeclaration: false
   AfterStruct: false
   AfterUnion: false
-  BeforeCatch: false
+  AfterExternBlock: false
+  BeforeCatch: true
   BeforeElse: true
-  IndentBraces: false
+  BeforeLambdaBody: false
+  BeforeWhile: true
+  SplitEmptyFunction: false
+  SplitEmptyRecord: false
+  SplitEmptyNamespace: false
+BreakAdjacentStringLiterals: false
+BreakAfterAttributes: Always
+BreakBeforeBraces: Custom
+BreakBeforeTernaryOperators: true
+BreakStringLiterals: false
+BreakConstructorInitializers: AfterColon
+BreakConstructorInitializersBeforeComma: false
+ColumnLimit: 90
+ConstructorInitializerAllOnOneLineOrOnePerLine: false
 Cpp11BracedListStyle: false
-SpaceBeforeCpp11BracedList: true
-SpaceBeforeParens: Custom
-SpaceBeforeParensOptions: 
-  AfterOverloadedOperator: true
-AlwaysBreakTemplateDeclarations: Yes
-AllowShortFunctionsOnASingleLine: Empty
-AllowShortIfStatementsOnASingleLine: WithoutElse
-AllowShortLambdasOnASingleLine: All
-BinPackArguments: false
+IncludeCategories:
+  - Regex: '^<.*'
+    Priority: 1
+  - Regex: '^".*'
+    Priority: 2
+  - Regex: '.*'
+    Priority: 3
+IncludeIsMainRegex: '([-_](test|unittest))?$'
+IndentCaseLabels: true
+IndentPPDirectives: BeforeHash
+IndentWidth: 4
 InsertNewlineAtEOF: true
+KeepEmptyLinesAtEOF: true
+MacroBlockBegin: ''
+MacroBlockEnd: ''
+MaxEmptyLinesToKeep: 1
+PointerAlignment: Left
+NamespaceIndentation: Inner
+SortIncludes: false
+SpaceBeforeCpp11BracedList: true
+SpaceInEmptyParentheses: false
+SpacesInAngles: false
+SpacesInConditionalStatement: false
+SpacesInCStyleCastParentheses: false
+SpacesInParentheses: false
+TabWidth: 4
+
