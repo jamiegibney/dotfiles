@@ -1,8 +1,9 @@
 # Configuration files
-### Quickstart
-```bash
-git clone https://github.com/jamiegibney/dotfiles.git && cd dotfiles && ./links.sh
-```
+
+<!-- ### Quickstart -->
+<!-- ```bash -->
+<!-- git clone https://github.com/jamiegibney/dotfiles.git && cd dotfiles && ./links.sh -->
+<!-- ``` -->
 
 <!-- # Usage -->
 <!---->
