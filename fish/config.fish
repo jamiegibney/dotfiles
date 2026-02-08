@@ -2,6 +2,9 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+fish_add_path "/usr/local/Qt-6.10.1/bin/"
+fish_add_path "$HOME/.local/bin"
+
 set -U fish_greeting
 
 # function fish_prompt
@@ -91,15 +94,12 @@ abbr --add ncfg cd ~/.dotfiles/nvim/
 abbr --add pasf cd ~/Documents/dev/cpp/pasf/
 abbr --add phy cd ~/Documents/dev/cpp/physarum/
 abbr --add sap cd ~/Documents/dev/cpp/sap/
-abbr --add eme cd ~/Documents/dev/cpp/eme/
-abbr --add asg cd ~/Documents/dev/pro/sound_reactions/sound_generators/asg/
+abbr --add ime cd ~/Documents/dev/cpp/ime/
 
 # Resume suspended process
 bind \cz "fg"
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
-
-fish_add_path ""
 
 function fish_prompt
     set -l __last_command_exit_status $status
